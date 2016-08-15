@@ -9,7 +9,7 @@
 <link type="image/x-icon" rel="shortcut icon" href="./fa.ico" />
 <!-- 加入bootstrap -->
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
-<script src="static/jquery.min.js"></script>
+<script src="static/js/jquery.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
 
 <title>index</title>

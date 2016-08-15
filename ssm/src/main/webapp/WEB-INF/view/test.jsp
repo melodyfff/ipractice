@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!-- <link rel="icon" href="./fa.ico" type="image/x-icon" /> -->
+<link type="image/x-icon" rel="shortcut icon" href="./fa.ico" />
+<!-- 引入bootstrap -->
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
-<script src="static/jquery.min.js"></script>
+<script src="static/js/jquery.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
+
+
 <title>BootStrap</title>
 
 
@@ -83,8 +87,17 @@
 				<input type="text" class="form-control" placeholder=".col-xs-3">
 			</div>
 		</div>
+		<p>点击进行输出'p',有count相加!</p>
+		<script type="text/javascript">
+			var count = 0;
+			$("body").on("click", "p", function() {
+				$(this).after("<p>Another paragraph! " + (++count) + "</p>");
+			});
+		</script>
 	</div>
-<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<button type="button" class="close" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
 
 
 

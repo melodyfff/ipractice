@@ -23,10 +23,14 @@ public class UserController {
 	
 	@RequestMapping("/showUser")
 	public String showUser(Model model){
-		List<User> users = userService.loadUsers();
-		model.addAttribute("users",users);
-		/*List<User> users2 = userService.loadUsers2();
-		model.addAttribute("users2",users2);*/
+		
+		//这个方法直接调用接口，只需接口和mapper映射文件，不用完成impl类
+	/*	List<User> users = userService.loadUsers();
+		model.addAttribute("users",users);*/
+		
+		
+		List<User> users2 = userService.loadUsers2();
+		model.addAttribute("users2",users2);
 		return "showuser";
 	}
 }

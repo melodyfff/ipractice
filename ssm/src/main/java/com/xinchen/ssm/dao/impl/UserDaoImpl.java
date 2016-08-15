@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> queryAll() {
 		// TODO Auto-generated method stub
-		return sqlSessionTemplate.selectList("mapping.UserMapper.queryAll");
+		return sqlSessionTemplate.selectList("UserMapper.queryAll");
 	}
 	
 }

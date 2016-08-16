@@ -15,6 +15,8 @@ public interface UserService {
 	* @Description: TODO 加载用户  
 	* @return List<User>     
 	*/
-	List<User> loadUsers();
-	List<User> loadUsers2();
+	public List<User> loadUsers();
+	public List<User> loadUsers2();
+	
+	public int save(User user);
 }

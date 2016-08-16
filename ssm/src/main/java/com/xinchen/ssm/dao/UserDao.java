@@ -15,5 +15,13 @@ public interface UserDao {
 	* @Description: TODO 查询所有    
 	* @return List<User>     
 	*/
-	List<User> queryAll();
+	public List<User> queryAll();
+	
+	/** 
+	* @Title: save 
+	* @Description: TODO 保存用户
+	* @param  user  
+	* @return int     
+	*/
+	public int save(User user);
 }

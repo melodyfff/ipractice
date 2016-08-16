@@ -6,12 +6,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!-- 加入标题图片 -->
+<!-- <link rel="icon" href="./fa.ico" type="image/x-icon" /> -->
+<link type="image/x-icon" rel="shortcut icon" href="${pageContext.request.contextPath}/fa.ico" />
+<!-- 加入bootstrap -->
+<link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+
 <title>显示所有用户</title>
 
 <body>
-<div>
-	<p>第一种没有dao的impl的写法,直接用接口的写法</p>
-        <table>
+<div class="container">
+ <div class="row">
+ <div class="col-md-6">
+ <p>第一种没有dao的impl的写法,直接用接口的写法</p>
+        <table class="table table-hover">
             <tr>
             	<th>id</th>
                 <th>用户名</th>
@@ -25,10 +35,10 @@
                 </tr>
             </c:forEach>
         </table>
-</div>
- <div>
+ </div>
+ <div class="col-md-6">
 	<p>第二种有dao的impl的写法</p>
-        <table>
+        <table class="table table-hover">
             <tr>
             	<th>id</th>
                 <th>用户名</th>
@@ -42,6 +52,9 @@
                 </tr>
             </c:forEach>
         </table>
+</div>
+
 </div> 
+</div>
     </body>
 </html>

@@ -15,11 +15,7 @@
                      	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd 
                         http://www.springframework.org/schema/aop 
                      	http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!-- 自动扫描 -->
+    <!-- 自动扫描 --><!-- 启用注释驱动自动注入的功能 -->
 	<context:component-scan base-package="com.xinchen.ssm.dao,com.xinchen.ssm.service" />
-	<!-- 引入配置文件 -->
-	<bean id="propertyConfigurer"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:jdbc.properties" />
-	</bean>
+	
 </beans>

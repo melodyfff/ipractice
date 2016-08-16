@@ -33,4 +33,18 @@ public class UserController {
 		model.addAttribute("users2",users2);
 		return "showuser";
 	}
+	
+	@RequestMapping("add")
+	public String addUser(Model model,String username,String password){
+		
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		System.out.println(user);
+		int addUser = userService.save(user);
+		List<User> users2 = userService.loadUsers2();
+		model.addAttribute("users2",users2);
+		return "showuser";
+		
+	}
 }

@@ -25,5 +25,11 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("UserMapper.queryAll");
 	}
+
+	@Override
+	public int save(User user) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.insert("UserMapper.save",user);
+	}
 	
 }

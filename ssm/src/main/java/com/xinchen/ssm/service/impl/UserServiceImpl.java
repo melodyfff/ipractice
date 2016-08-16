@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 	 @Autowired
 	 private UserDao userDao;
 	 
+	//此为只实现Dao接口，不需要impl实现类的写法
 	@Override
 	public List<User> loadUsers() {
 		// TODO Auto-generated method stub
@@ -33,6 +34,12 @@ public class UserServiceImpl implements UserService {
 	public List<User> loadUsers2() {
 		// TODO Auto-generated method stub
 		return userDao.queryAll();
+	}
+
+	@Override
+	public int save(User user) {
+		// TODO Auto-generated method stub
+		return userDao.save(user);
 	}
 
 	

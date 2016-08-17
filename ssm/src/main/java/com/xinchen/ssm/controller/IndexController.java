@@ -35,6 +35,10 @@ public class IndexController {
 		return "modal";	
 	}
 	
+	@RequestMapping("/jqueryajax")
+	public String jqaj(){
+		return "jqueryajax";	
+	}
 	@RequestMapping("/jtest")
 	public String jtest(){
 		return "jtest";	
@@ -58,11 +62,61 @@ public class IndexController {
 	 */
 	@RequestMapping("/jtest/ajax") 
 	@ResponseBody
-    public  Map<String,Object> login(HttpServletRequest request,HttpServletResponse response) throws IOException{  
-        System.out.println(request.getParameter("name"));  
+    public  Map<String,Object> login(HttpServletRequest request,HttpServletResponse response) throws IOException{
+		System.out.println(request.getParameter("name1"));
+ /*       System.out.println(request.getParameter("name"));  */
         Map<String,Object> map = new HashMap<String,Object>();  
           
-        if(request.getParameter("name").equals("123")){  
+       /* if(request.getParameter("name").equals("123")){  
+            System.out.println("成功");  
+            map.put("msg", "成功");  
+        }else{  
+            System.out.println("失败");  
+            map.put("msg", "失败");  
+        }  */
+        if(request.getParameter("name1").equals("123")){  
+        System.out.println("成功");  
+        map.put("msg", "成功");  
+    }else{  
+        System.out.println("失败");  
+        map.put("msg", "失败");  
+    }  
+        return map;  
+    }  
+	
+	/**
+	 * ajax传值
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 */
+	@RequestMapping("/jtest/a") 
+	@ResponseBody
+    public  Map<String,Object> a(HttpServletRequest request,HttpServletResponse response) throws IOException{ 
+		
+		System.out.println(request.getParameter("uName"));
+
+        Map<String,Object> map = new HashMap<String,Object>();  
+          
+        if(request.getParameter("uName").equals("123")){  
+            System.out.println("成功");  
+            map.put("msg", "成功");  
+        }else{  
+            System.out.println("失败");  
+            map.put("msg", "失败");  
+        }  
+        return map;  
+    }  
+	@RequestMapping("/jqueryajax/a") 
+	@ResponseBody
+    public  Map<String,Object> jqja(HttpServletRequest request,HttpServletResponse response) throws IOException{ 
+		
+		System.out.println(request.getParameter("myname"));
+		System.out.println(request.getParameter("name"));
+        Map<String,Object> map = new HashMap<String,Object>();  
+          
+        if(request.getParameter("myname").equals("123")){  
             System.out.println("成功");  
             map.put("msg", "成功");  
         }else{  

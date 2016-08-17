@@ -14,7 +14,8 @@
 <script type="text/javascript">  
     function ajaxTest(){  
         $.ajax({  
-        data:"name="+$("#name").val(),  
+        data:"name="+$("#name").val(),
+
         type:"GET",  
         dataType: 'json',  
         url:"${pageContext.request.contextPath}/jtest/ajax",  
@@ -28,11 +29,55 @@
         }
         });  
     }  
+    
+    function ajaxTest1(){  
+        $.ajax({  
+
+
+        type:"GET",  
+        data:$('#ff').serialize(),// 你的formid
+        url:"${pageContext.request.contextPath}/jtest/ajax",  
+        async: false,
+        success:function(data){  
+            alert("处理结果:"+data.msg);  
+            $("#result").html(data.msg) ;  
+        } ,
+        error:function(data){  
+            alert("出错了！！:"+data.msg);  
+        }
+        });  
+    }  
+    
+    $(document).ready(function(){ 
+    	$("#uName").change(function(){	
+    	$.post("${pageContext.request.contextPath}/jtest/a", { uName: $("#uName").val()} ,
+    			function(data){$("#output").text(data.msg);
+    			}); 
+    	}); 
+    	}); 
 </script>  
 </head>  
 <body>  
     <input type="text" name="name" id="name"/>  
+
     <input type="submit" value="登录" onclick="ajaxTest();"/>  
     <div id="result"></div>  
+    
+    <div>
+    <form id="ff">
+    <input type="text" name="name1" id="name1"/>  <br>
+     <input type="text" name="pass" id="pass"/>  
+      <input type="submit" value="登录" onclick="ajaxTest1();"/>
+    </form>
+    </div>
+    
+    <br>
+    
+    <div id="reg"> 
+  <font size="4" color="blue"><b>注册</b></font> 
+  <form name="form1" action="" method="post"> 
+  用户名：<input type="text" name="uName" id="uName">&nbsp;<font id="output"></font><p>  
+  </form> 
+  </div> 
 </body>  
 </html>  

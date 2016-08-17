@@ -24,4 +24,25 @@ public interface UserDao {
 	* @return int     
 	*/
 	public int save(User user);
+	/** 
+	* @Title: update
+	* @Description: TODO 修改用户
+	* @param  user  
+	* @return int     
+	*/
+	public int update(User user);
+	/** 
+	* @Title: update
+	* @Description: TODO 删除用户
+	* @param  user  
+	* @return Int     
+	*/
+	public int delete(String userName);
+	/** 
+	* @Title: findone
+	* @Description: TODO 查询用户
+	* @param  username  
+	* @return User     
+	*/
+	public User findOne(String userName);
 }

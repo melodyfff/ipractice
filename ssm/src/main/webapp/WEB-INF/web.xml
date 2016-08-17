@@ -8,7 +8,10 @@
 	<welcome-file-list>
 		<welcome-file>/WEB-INF/view/index.jsp</welcome-file>
 	</welcome-file-list>
-
+	<error-page>
+		<error-code>javax.servlet.ServletException</error-code>
+		<location>/404.jsp</location>
+	</error-page>
 
 	<!-- log4j -->
 

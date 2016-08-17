@@ -53,8 +53,12 @@
             </c:forEach>
         </table>
 </div>
-
 </div> 
+<div class="row">
+<p><p>${find_user.id}</p></p>
+<p>${find_user.username}</p>
+<p>${find_user.password}</p>
+</div>
 </div>
     </body>
 </html>

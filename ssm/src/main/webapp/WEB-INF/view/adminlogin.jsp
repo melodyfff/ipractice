@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>宝藏门口</title>
+<title>宝藏入口</title>
 
 <!-- CSS -->
 <link rel="stylesheet"
@@ -54,23 +54,23 @@
 					<div class="col-sm-6 col-sm-offset-3 form-box">
 						<div class="form-top">
 							<div class="form-top-left">
-								<h3>温馨提示</h3>
-								<p>热水已经烧好,猫不知在哪:)</p>
+								<h3>宝藏入口</h3>
+								<p>咖啡已泡好,猫不知在哪:)</p>
 							</div>
 							<div class="form-top-right">
 								<i class="fa fa-lock"></i>
 							</div>
 						</div>
 						<div class="form-bottom">
-							<form role="form" action="" method="post" class="login-form">
+							<form role="form" action="${pageContext.request.contextPath}/aaaa" method="post" class="login-form">
 								<div class="form-group">
 									<label class="sr-only" for="form-username">Username</label> <input
-										type="text" name="form-username" placeholder="Username..."
+										type="text" name="username" placeholder="Username..."
 										class="form-username form-control" id="form-username">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="form-password">Password</label> <input
-										type="password" name="form-password" placeholder="Password..."
+										type="password" name="password" placeholder="Password..."
 										class="form-password form-control" id="form-password">
 								</div>
 								<button type="submit" class="btn">芝麻开门</button>

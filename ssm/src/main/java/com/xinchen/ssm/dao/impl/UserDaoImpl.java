@@ -31,5 +31,23 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.insert("UserMapper.save",user);
 	}
+
+	@Override
+	public int update(User user) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.update("UserMapper.update",user);
+	}
+
+	@Override
+	public int delete(String userName) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.delete(userName);
+	}
+
+	@Override
+	public User findOne(String userName) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectOne("UserMapper.findOne",userName);
+	}
 	
 }

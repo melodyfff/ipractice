@@ -17,15 +17,47 @@
 		t.password
 	</sql>
 
-	<!-- 查询所有person -->
+	<!-- 查询所有 -->
 	<select id="queryAll" resultMap="User">
-		select
-		<include refid="Base_Column_List" />
+		select <include refid="Base_Column_List" />
 		from user as t
 	</select>
+	<!-- 查找用户 -->
+	<select id="findOne" parameterType="String" resultMap="User">
+		SELECT
+			*
+		FROM
+			user
+		WHERE
+			username = #{username}
+	</select>
 	<!-- 添加新用户 -->
-	<insert id="save" parameterType="com.xinchen.ssm.entity.User">
-		insert into user (username,password)
-		values (#{username},#{password})
+	<insert id="save" parameterType="com.xinchen.ssm.entity.User"
+		useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			 user (username,password)
+		VALUES 
+			(#{username},#{password})
+		<selectKey resultType="java.lang.Integer" order="AFTER"
+			keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
+	<!-- 修改用户密码 -->
+	<update id="update" parameterType="com.xinchen.ssm.entity.User">
+		UPDATE user
+		SET 
+			password = #{password}
+		WHERE
+			username = #{username}
+	</update>
+	<!-- 删除用户 -->
+	<delete id="delete" parameterType="String">
+		DELETE FROM
+			user
+		WHERE
+			username = #{username}
+	</delete>
+
+
 </mapper>

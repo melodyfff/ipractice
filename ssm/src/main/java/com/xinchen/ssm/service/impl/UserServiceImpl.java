@@ -42,6 +42,24 @@ public class UserServiceImpl implements UserService {
 		return userDao.save(user);
 	}
 
+	@Override
+	public int update(User user) {
+		// TODO Auto-generated method stub
+		return userDao.update(user);
+	}
+
+	@Override
+	public int delete(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.delete(userName);
+	}
+
+	@Override
+	public User findOne(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.findOne(userName);
+	}
+
 	
 	
 

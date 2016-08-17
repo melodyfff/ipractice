@@ -20,21 +20,64 @@
 			pageContext.request.contextPath:${pageContext.request.contextPath} 
 			<a href="${pageContext.request.contextPath}/user/showUser">显示所有用户</a>
 		</div>
+		<!-- add user -->
 		<div class="row">
-			<form action="${pageContext.request.contextPath}/user/add">
-				<div class="form-group">
+			<form action="${pageContext.request.contextPath}/user/add" class="form-inline">
+				<div class="form-group " >
 					<label for="exampleInputEmail3">username</label> 
-					<input type="text" class="form-control" id="username" name="username"
+					<input type="text" class="form-control" id="username" name="userName"
 						placeholder="username">
 				</div>
-				<div class="form-group">
+				<div class="form-group ">
 					<label for="exampleInputEmail3">password</label> 
 					<input type="text" class="form-control" id="password" name="password"
 						placeholder="password">
 				</div>
-				<input type="submit" class="btn btn-default">
+				<input type="submit" class="btn btn-default" value="新增">
 			</form>
 		</div>
+		<!-- update user -->
+		<div class="row">
+			<form action="user/update" class="form-inline">
+				<div class="form-group " >
+					<label for="exampleInputEmail3">username</label> 
+					<input type="text" class="form-control" id="userName" name="userName"
+						placeholder="username">
+				</div>
+				<div class="form-group ">
+					<label for="exampleInputEmail3">password</label> 
+					<input type="text" class="form-control" id="password" name="password"
+						placeholder="password">
+				</div>
+				<input type="submit" class="btn btn-default" value="修改">
+			</form>
+		</div>
+		
+		<!-- delete user -->
+		<div class="row">
+			<form action="user/delete" class="form-inline">
+				<div class="form-group " >
+					<label for="exampleInputEmail3">username</label> 
+					<input type="text" class="form-control" id="username" name="userName"
+						placeholder="username">
+				</div>
+
+				<input type="submit" class="btn btn-default" value="删除">
+			</form>
+		</div>
+		
+		<!-- 查找用户 -->
+		<div class="row">
+			<form action="user/find" class="form-inline">
+				<div class="form-group " >
+					<label for="exampleInputEmail3">username</label> 
+					<input type="text" class="form-control" id="username" name="userName"
+						placeholder="username">
+				</div>
+
+				<input type="submit" class="btn btn-default" value="查找">
+			</form>
+		</div>	
 
 	</div>
 

@@ -17,6 +17,28 @@ public interface UserService {
 	*/
 	public List<User> loadUsers();
 	public List<User> loadUsers2();
-	
+	/** 
+	* @Title: save
+	* @Description: TODO 添加用户  
+	* @return int   
+	*/
 	public int save(User user);
+	/** 
+	* @Title: uodate
+	* @Description: TODO 修改用户  
+	* @return int   
+	*/
+	public int update(User user);
+	/** 
+	* @Title: delete
+	* @Description: TODO 删除用户  
+	* @return int   
+	*/
+	public int delete(String userName);
+	/** 
+	* @Title: findone
+	* @Description: TODO 查询用户  
+	* @return int   
+	*/
+	public User findOne(String userName);
 }

@@ -14,7 +14,7 @@
 <script type="text/javascript">  
     function ajaxTest(){  
         $.ajax({  
-        data:"name="+$("#name").val(),
+        data:"name1="+$("#name1").val(),
 
         type:"GET",  
         dataType: 'json',  
@@ -34,13 +34,13 @@
         $.ajax({  
 
 
-        type:"GET",  
+        type:"post",  
         data:$('#ff').serialize(),// 你的formid
         url:"${pageContext.request.contextPath}/jtest/ajax",  
         async: false,
         success:function(data){  
             alert("处理结果:"+data.msg);  
-            $("#result").html(data.msg) ;  
+            $("#output1").html(data.msg) ;  
         } ,
         error:function(data){  
             alert("出错了！！:"+data.msg);  
@@ -63,13 +63,13 @@
     <input type="submit" value="登录" onclick="ajaxTest();"/>  
     <div id="result"></div>  
     
-    <div>
+<!--     <div>
     <form id="ff">
     <input type="text" name="name1" id="name1"/>  <br>
      <input type="text" name="pass" id="pass"/>  
-      <input type="submit" value="登录" onclick="ajaxTest1();"/>
+      <input type="submit" value="登录" onclick="ajaxTest1();"/><font id="output1"></font>
     </form>
-    </div>
+    </div> -->
     
     <br>
     

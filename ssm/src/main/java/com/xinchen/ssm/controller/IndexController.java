@@ -23,7 +23,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
 	
 	
-
+	@RequestMapping("main")
+	public String main(){
+		return "main";
+	}
 	
 	@RequestMapping("/test")
 	public String test(){
@@ -64,16 +67,10 @@ public class IndexController {
 	@ResponseBody
     public  Map<String,Object> login(HttpServletRequest request,HttpServletResponse response) throws IOException{
 		System.out.println(request.getParameter("name1"));
- /*       System.out.println(request.getParameter("name"));  */
+		System.out.println(request.getParameter("pass"));
         Map<String,Object> map = new HashMap<String,Object>();  
           
-       /* if(request.getParameter("name").equals("123")){  
-            System.out.println("成功");  
-            map.put("msg", "成功");  
-        }else{  
-            System.out.println("失败");  
-            map.put("msg", "失败");  
-        }  */
+
         if(request.getParameter("name1").equals("123")){  
         System.out.println("成功");  
         map.put("msg", "成功");  
@@ -113,7 +110,7 @@ public class IndexController {
     public  Map<String,Object> jqja(HttpServletRequest request,HttpServletResponse response) throws IOException{ 
 		
 		System.out.println(request.getParameter("myname"));
-		System.out.println(request.getParameter("name"));
+
         Map<String,Object> map = new HashMap<String,Object>();  
           
         if(request.getParameter("myname").equals("123")){  

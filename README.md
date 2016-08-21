@@ -1,6 +1,6 @@
 # MPractice
 
-> * 整理学习学习笔记
+> * 整理学习笔记
 
 
 > * This is the record of my development history.
@@ -9,7 +9,7 @@
 
 #Include
 
-> * 包括如下内容：
+> * 内容如下：
 > * airthmeticStudy
 > * JavaIO
 > * Javascript

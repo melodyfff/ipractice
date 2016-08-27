@@ -14,6 +14,6 @@
 > * JavaIO
 > * Javascript
 > * JQuery
-> * ssm(Spring+springMVC+Mybatis)框架整合
+> * ssm(Spring+springMVC+Mybatis)框架整合 新增bootstrap  table分页
 
 # 还有一些有趣的技术

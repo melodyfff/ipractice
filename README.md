@@ -13,6 +13,7 @@
 > * airthmeticStudy
 > * JavaIO
 > * Javascript
+> * JQuery
 > * ssm(Spring+springMVC+Mybatis)框架整合
 
 # 还有一些有趣的技术

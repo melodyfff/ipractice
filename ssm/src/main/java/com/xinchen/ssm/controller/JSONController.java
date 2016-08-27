@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xinchen.ssm.entity.User;
 
+/** 
+* @ClassName: JSONController 
+* @Description: JOSN传值
+* @author xinchen 2016年8月27日 下午6:19:58 
+*  
+*/
 @Controller
 public class JSONController {
 
@@ -26,7 +32,7 @@ public class JSONController {
 		System.out.println(user);
 		System.out.println(username);
 		map.put("status", 200);
-		map.put("data", user);
+		map.put("user", user);
 		map.put("message", "success!");
 		return map;
 		

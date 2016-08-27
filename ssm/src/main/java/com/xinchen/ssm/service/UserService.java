@@ -2,6 +2,7 @@ package com.xinchen.ssm.service;
 
 import java.util.List;
 
+import com.xinchen.ssm.Utils.PageUtil;
 import com.xinchen.ssm.entity.User;
 
 /**   
@@ -41,4 +42,21 @@ public interface UserService {
 	* @return int   
 	*/
 	public User findOne(String userName);
+	
+	/** 
+	* @Title: page 
+	* @Description: TODO 分页
+	* @param @return     
+	* @return List<User>     
+	* @throws 
+	*/
+	public List<User> page(PageUtil pageUtil);
+	/** 
+	* @Title: page 
+	* @Description: TODO 页面总数
+	* @param @return     
+	* @return List<User>     
+	* @throws 
+	*/
+	public int pageCount(PageUtil pageUtil);
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.xinchen.ssm.Utils.PageUtil;
 import com.xinchen.ssm.dao.UserDao;
 import com.xinchen.ssm.dao.UserMapper;
 import com.xinchen.ssm.entity.User;
@@ -58,6 +59,18 @@ public class UserServiceImpl implements UserService {
 	public User findOne(String userName) {
 		// TODO Auto-generated method stub
 		return userDao.findOne(userName);
+	}
+
+	@Override
+	public List<User> page(PageUtil pageUtil) {
+		// TODO Auto-generated method stub
+		return userDao.page(pageUtil);
+	}
+
+	@Override
+	public int pageCount(PageUtil pageUtil) {
+		// TODO Auto-generated method stub
+		return userDao.pageCount(pageUtil);
 	}
 
 	

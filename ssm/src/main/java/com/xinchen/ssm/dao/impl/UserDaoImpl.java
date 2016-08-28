@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.xinchen.ssm.dao.UserDao;
 import com.xinchen.ssm.entity.User;
-import com.xinchen.ssm.myUtils.PageUtil;
+import com.xinchen.ssm.utils.PageUtil;
 
 /**   
 * @Description: 

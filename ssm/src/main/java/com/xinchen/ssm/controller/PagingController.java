@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xinchen.ssm.entity.User;
-import com.xinchen.ssm.myUtils.PageUtil;
 import com.xinchen.ssm.service.UserService;
+import com.xinchen.ssm.utils.PageUtil;
 
 /**   
 * @Description: 分页

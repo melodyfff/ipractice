@@ -18,7 +18,7 @@
 	</sql>
 
 	<!-- 分页 -->
-	<select id="page" parameterType="com.xinchen.ssm.myUtils.PageUtil" resultMap="User" >
+	<select id="page" parameterType="com.xinchen.ssm.utils.PageUtil" resultMap="User" >
 		select * from user 
 		<trim prefix="WHERE" prefixOverrides="AND | OR" >
             <if test="search != null">
@@ -32,7 +32,7 @@
         LIMIT #{offset}, #{limit}
 	</select>
 	
-	<select id="pageCount" parameterType="com.xinchen.ssm.myUtils.PageUtil" resultType="int">
+	<select id="pageCount" parameterType="com.xinchen.ssm.utils.PageUtil" resultType="int">
 		SELECT COUNT(*) from user 
 		<trim prefix="WHERE" prefixOverrides="AND | OR" >
             <if test="search != null">

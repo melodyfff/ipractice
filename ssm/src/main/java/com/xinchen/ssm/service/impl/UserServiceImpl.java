@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import com.xinchen.ssm.dao.UserDao;
 import com.xinchen.ssm.dao.UserMapper;
 import com.xinchen.ssm.entity.User;
-import com.xinchen.ssm.myUtils.PageUtil;
 import com.xinchen.ssm.service.UserService;
+import com.xinchen.ssm.utils.PageUtil;
 
 /**   
 * @Description: 

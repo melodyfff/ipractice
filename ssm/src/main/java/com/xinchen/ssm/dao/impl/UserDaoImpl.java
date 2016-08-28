@@ -7,9 +7,9 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.xinchen.ssm.Utils.PageUtil;
 import com.xinchen.ssm.dao.UserDao;
 import com.xinchen.ssm.entity.User;
+import com.xinchen.ssm.myUtils.PageUtil;
 
 /**   
 * @Description: 

@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.xinchen.ssm.Utils.PageUtil;
 import com.xinchen.ssm.dao.UserDao;
 import com.xinchen.ssm.dao.UserMapper;
 import com.xinchen.ssm.entity.User;
+import com.xinchen.ssm.myUtils.PageUtil;
 import com.xinchen.ssm.service.UserService;
 
 /**   

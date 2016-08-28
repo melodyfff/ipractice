@@ -2,8 +2,8 @@ package com.xinchen.ssm.dao;
 
 import java.util.List;
 
-import com.xinchen.ssm.Utils.PageUtil;
 import com.xinchen.ssm.entity.User;
+import com.xinchen.ssm.myUtils.PageUtil;
 
 /**   
 * @Description: 

@@ -17,6 +17,29 @@
 		t.password
 	</sql>
 
+	<!-- 分页 -->
+	<select id="page" parameterType="com.xinchen.ssm.Utils.PageUtil" resultMap="User" >
+		select * from user 
+		<trim prefix="WHERE" prefixOverrides="AND | OR" >
+            <if test="search != null">
+                (id LIKE #{search} ) or (username LIKE #{search})
+            </if>
+        </trim>
+        <if test="ordername != null">
+            <!--这里使用$符号-->
+            ORDER BY ${ordername} ${order}
+        </if>
+        LIMIT #{offset}, #{limit}
+	</select>
+	
+	<select id="pageCount" parameterType="com.xinchen.ssm.Utils.PageUtil" resultType="int">
+		SELECT COUNT(*) from user 
+		<trim prefix="WHERE" prefixOverrides="AND | OR" >
+            <if test="search != null">
+                (id LIKE #{search} ) or (username LIKE #{search})
+            </if>
+        </trim>
+	</select>
 	<!-- 查询所有 -->
 	<select id="queryAll" resultMap="User">
 		select <include refid="Base_Column_List" />

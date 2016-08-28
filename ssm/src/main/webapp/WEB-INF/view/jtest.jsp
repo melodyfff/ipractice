@@ -14,15 +14,15 @@
 <script type="text/javascript">  
     function ajaxTest(){  
         $.ajax({  
-        data:"name1="+$("#name1").val(),
+        data:"name1="+$("#name").val(),
 
         type:"GET",  
         dataType: 'json',  
-        url:"${pageContext.request.contextPath}/jtest/ajax",  
+        url:"${pageContext.request.contextPath}/jtest/ajax1",  
        
         success:function(data){  
             alert("处理结果:"+data.msg);  
-            $("#result").html(data.msg) ;  
+            $("#result").html("data.msg:"+data.msg) ;  
         } ,
         error:function(data){  
             alert("出错了！！:"+data.msg);  
@@ -36,7 +36,7 @@
 
         type:"post",  
         data:$('#ff').serialize(),// 你的formid
-        url:"${pageContext.request.contextPath}/jtest/ajax",  
+        url:"${pageContext.request.contextPath}/jtest/ajax2",  
         async: false,
         success:function(data){  
             alert("处理结果:"+data.msg);  
@@ -58,10 +58,11 @@
 </script>  
 </head>  
 <body>  
+	<p>input 传值到后台返回结果</p>
     <input type="text" name="name" id="name"/>  
 
     <input type="submit" value="登录" onclick="ajaxTest();"/>  
-    <div id="result"></div>  
+    <p>结果显示：</p><div id="result"></div>  
     
 <!--     <div>
     <form id="ff">
@@ -74,7 +75,7 @@
     <br>
     
     <div id="reg"> 
-  <font size="4" color="blue"><b>注册</b></font> 
+  <font size="4" color="blue"><b>注册(即时验证是否存在该输入值)</b></font> 
   <form name="form1" action="" method="post"> 
   用户名：<input type="text" name="uName" id="uName">&nbsp;<font id="output"></font><p>  
   </form> 

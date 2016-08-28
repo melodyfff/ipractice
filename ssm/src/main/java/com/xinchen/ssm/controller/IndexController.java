@@ -119,6 +119,55 @@ public class IndexController {
         return map;  
     }  
 	
+	
+	/**
+	 * input传值到后台得到结果返回前台
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 */
+	@RequestMapping("/jtest/ajax1") 
+	@ResponseBody
+    public  Map<String,Object> testAjax(HttpServletRequest request,HttpServletResponse response) throws IOException{
+		System.out.println(request.getParameter("name1"));
+        Map<String,Object> map = new HashMap<String,Object>();  
+          
+
+        if(request.getParameter("name1").equals("123")){  
+        System.out.println("成功");  
+        map.put("msg", "成功");  
+    }else{  
+        System.out.println("失败");  
+        map.put("msg", "失败");  
+    }  
+        return map;  
+    } 
+	
+	/**
+	 * 即时验证是否存在该值，返回结果
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 */
+	@RequestMapping("/jtest/ajax2") 
+	@ResponseBody
+    public  Map<String,Object> testAjax2(HttpServletRequest request,HttpServletResponse response) throws IOException{
+		System.out.println(request.getParameter("name1"));
+        Map<String,Object> map = new HashMap<String,Object>();  
+          
+
+        if(request.getParameter("name1").equals("123")){  
+        System.out.println("成功");  
+        map.put("msg", "成功");  
+    }else{  
+        System.out.println("失败");  
+        map.put("msg", "失败");  
+    }  
+        return map;  
+    } 
+	
 
 	
 }

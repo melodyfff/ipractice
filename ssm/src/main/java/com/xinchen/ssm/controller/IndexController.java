@@ -23,10 +23,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
 	
 	
-	@RequestMapping("main")
-	public String main(){
-		return "main";
-	}
 	
 	@RequestMapping("/test")
 	public String test(){

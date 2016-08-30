@@ -21,4 +21,4 @@
 # arithmetic算法学习
 > * 数据结构 Data Structure
 >> * 线性表   Linear   list
->>> *顺序表 Sequenatial   list
+>>> * 顺序表 Sequenatial   list

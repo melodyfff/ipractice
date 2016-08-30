@@ -19,5 +19,5 @@
 # 还有一些有趣的技术
 
 # arithmetic算法学习
-> * 数据结构
->> *顺序表
+> * 数据结构 data structure
+>> *顺序表 Sequenatial   list

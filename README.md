@@ -17,7 +17,7 @@
 > * ssm(Spring+springMVC+Mybatis)框架整合 新增bootstrap  table分页
 
 # 还有一些有趣的技术
-
+# python学习
 # arithmetic算法学习
 > * 数据结构 Data Structure
 >> * 线性表   Linear   list

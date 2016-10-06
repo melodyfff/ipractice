@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+	default-autowire="byName">
+	<!-- 当设置default-autowire="byName" 时，会在service里面寻找和autoWiringDAO 完全一致 的bean的名字，并进行赋值 -->
+	<!-- 当设置default-autowire="byType" 时，效果和byName一样，但是autoWiringDAO 和 bean的名字可以不一致，和ID无关 -->
+	<!-- default-autowire="constructor" 通过构造器注入 和byType一样去匹配bean-->
+
+	<bean id="autoWiringService" class="com.xinchen.spring.autowiring.AutoWiringService">
+		<!-- 当 default-autowire="byName"存在时 不需进行 property -->
+		<!-- 如果没有default-autowire 并且 没写property则DAO层不注入 -->
+		<!-- <property name="autoWiringDAO" ref="autoWiringDAO"></property> -->
+	</bean>
+	<bean id="autoWiringDAO" class="com.xinchen.spring.autowiring.AutoWiringDAO"></bean>
+</beans>

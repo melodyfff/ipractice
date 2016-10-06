@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd  
+                        http://www.springframework.org/schema/aop 
+                     	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+    
+	<bean id="myAspect" class="com.xinchen.spring.aop.schema.advice.MyAspect"></bean>
+	<bean id="aspectBiz" class="com.xinchen.spring.aop.schema.advice.biz.AspectBiz"></bean>
+	
+	<!-- schema-defined aspect只支持singleton model -->
+	<!-- 配置文件实现的切面只支持单例模式 -->
+	
+	<!-- 
+		任意公共方法的执行：
+		execution(public * *(..))
+		任何一个以“set”开始的方法的执行：
+		execution(* set*(..))
+		AccountService 接口的任意方法的执行：
+		execution(* com.xyz.service.AccountService.*(..))
+		定义在service包里的任意方法的执行：
+		execution(* com.xyz.service.*.*(..))
+		定义在service包和所有子包里的任意类的任意方法的执行：
+		execution(* com.xyz.service..*.*(..))
+		定义在pointcutexp包和所有子包里的JoinPointObjP2类的任意方法的执行：
+		execution(* com.test.spring.aop.pointcutexp..JoinPointObjP2.*(..))")
+		***> 最靠近(..)的为方法名,靠近.*(..))的为类名或者接口名,如上例的JoinPointObjP2.*(..))
+	 -->
+	<aop:config>
+		<aop:aspect id="myAspectAOP" ref="myAspect">
+ 			<aop:pointcut expression = "execution(* com.xinchen.spring.aop.schema.advice.biz.*Biz.*(..))" id="myPointcut" />
+			<aop:before method="before" pointcut-ref="myPointcut" />
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut" />
+			<!-- 抛出异常时才执行 -->
+			<aop:after-throwing method="afterThrowing" pointcut-ref="myPointcut"/>
+			<aop:after method="after" pointcut-ref="myPointcut" />
+			<aop:around method="around" pointcut-ref="myPointcut"/> 
+			
+			<aop:around method="aroundInit" pointcut="execution(* com.xinchen.spring.aop.schema.advice.biz.AspectBiz.init(String,int))
+			 			and args(bizName,times)"/><!-- 此处参数名要与业务类的参数名相同 -->
+			 			
+			 <!-- 转换实现接口，指定一个新的父类接口 -->			
+			<aop:declare-parents types-matching="com.xinchen.spring.aop.schema.advice.biz.*(+)" 
+					implement-interface="com.xinchen.spring.aop.schema.advice.Fit"
+					default-impl="com.xinchen.spring.aop.schema.advice.FitImpl"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
